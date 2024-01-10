@@ -9,11 +9,20 @@ class User_pub extends Model {}
 
 Post.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
+        display_name: {
+            type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
+            primaryKey: true
+        },
+        user_bio: {
+            type: DataTypes.JSON
+        },
+        user_id:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         },
         // @TODO: add hooks
         hooks: {

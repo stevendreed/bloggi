@@ -19,6 +19,11 @@ Post.init(
                 key: display_name
             }
         },
+        text:
+        {
+            type: DataTypes.JSON, // need bigger char limit than 255
+            allowNull: false
+        },
         // @TODO: add hooks
         hooks: {
         },

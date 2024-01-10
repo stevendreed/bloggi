@@ -11,6 +11,14 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
+        author:
+        {
+            type: DataTypes.STRING, // chart is wrong: this references display name
+            references: {
+                model: user_pub,
+                key: display_name
+            }
+        },
         // @TODO: add hooks
         hooks: {
         },

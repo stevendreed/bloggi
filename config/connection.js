@@ -15,4 +15,13 @@ sequelize = new Sequelize(
     }
 );
 
+sequelize
+    .authenticate()
+        .then(() => {
+            console.log(`Connection to ${process.env.DB_NAME} as ${process.env.DB_USER} successful!`);
+        })
+        .catch(err => {
+            console.log(`${err} | failed to connect to ${process.env.DB_NAME} as ${process.env.DB_USER}`);
+        });
+
 module.exports = sequelize;

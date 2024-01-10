@@ -24,6 +24,10 @@ Post.init(
             type: DataTypes.JSON, // need bigger char limit than 255
             allowNull: false
         },
+        published: {
+            type: DataTypes.BOOLEAN,
+            default: false
+        },
         // @TODO: add hooks
         hooks: {
         },

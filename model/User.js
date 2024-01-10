@@ -33,6 +33,14 @@ User.init(
         is_active: {
             type: DataTypes.BOOLEAN,
             defaultValue: true
-        }
-    }
-)
+        },
+        // @TODO: add hooks
+        hooks: {
+        },
+        sequelize,
+        timestamps: true,
+        freezeTableNames: true,
+        underscored: true,
+        modelName: user
+    }, // end attributes
+);

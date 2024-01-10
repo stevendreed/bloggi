@@ -11,22 +11,22 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-// const sess = {
-//     secret: 'default',
-//     cookie: {
-//         maxAge: 1000 * 60 * 60 * 6, // 6 hours
-//         httpOnly: true,
-//         secure: false,
-//         sameSite: 'strict'
-//     },
-//     resave: false,
-//     saveUninitialized: true,
-//     store: new SequelizeStore({
-//         db: sequelize
-//     })
-// };
+const sess = {
+    secret: 'default',
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 6, // 6 hours
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict'
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
 
-// app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');

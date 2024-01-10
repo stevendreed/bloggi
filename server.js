@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 // set static served pages path to ${REPOSITORY}/public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(routes);
+app.use(routes);
 
 // initialize sequelize ORM 
 sequelize.sync({ force: false }).then(() => {
